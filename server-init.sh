@@ -1,6 +1,9 @@
 # tree
 
-sudo apt-get update
+if ! $updated_recently; then
+  sudo apt-get update
+  updated_recently=TRUE
+fi
 
 # JDK
 which_javac=`which javac`
@@ -11,6 +14,7 @@ else
 fi
 
 # Android SDK
+which_javac=`which android`
 if [ ! -z "$which_android" ]
   echo "Android SDK already installed"
 else
@@ -19,7 +23,6 @@ else
   sudo mv android-sdk-linux /usr/local/bin
   sudo touch /etc/profile.d/android-sdk-path
   echo "export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/platform-tools" > /etc/profile.d/android-sdk-path
-
 
   # Install Android SDK's tools
   /usr/local/bin/android-sdk-linux/tools/android list sdk --all
@@ -35,7 +38,6 @@ else
   echo -n "Package numbers separated by comma, no spaces:"
   read packages
   /usr/local/bin/android-sdk-linux/tools/android update sdk -u -a -t $packages
-
 
 fi
 
