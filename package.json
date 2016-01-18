@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "postinstall": "cd Tangerine-client && npm install"
+    "postinstall": "cd client && npm install"
   },
   "repository": {
     "type": "git",

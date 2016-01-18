@@ -32,7 +32,7 @@ else
 fi
 
 sudo git submodule init && git submodule update
-cd Tangerine-client
+cd client
 sudo npm install
 sudo chown -R www-data:www-data /var/www
 

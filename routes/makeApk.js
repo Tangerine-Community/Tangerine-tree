@@ -81,12 +81,12 @@ const makeApk = function(req, res) {
   const token = Token.make();
 
   // load the json packs
-  cd(`${__dirname}/../Tangerine-client`);
+  cd(`${__dirname}/../client`);
   const preload = exec(`npm run treeload --group=${groupName}`);
   if (notOk(preload, res, HttpStatus.INTERNAL_SERVER_ERROR)) { return; }
 
   // build the apk
-  cd(`${__dirname}/../Tangerine-client`);
+  cd(`${__dirname}/../client`);
   const buildApk = exec(`npm run build:apk`);
   if (notOk(buildApk, res, HttpStatus.INTERNAL_SERVER_ERROR)) { return; }
 
