@@ -6,6 +6,8 @@ config.rb
 # generated apk files
 apks/
 
+node_modules
+
 # Bundler
 .bundle/
 vendor/
