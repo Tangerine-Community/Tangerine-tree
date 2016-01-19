@@ -15,7 +15,7 @@ else
 fi
 
 # Android SDK
-which_javac=`which android`
+which_android=`sudo which /usr/local/bin/android-sdk-linux/tools/android`
 if [ ! -z "$which_android" ]; then
   echo "Android SDK already installed"
 else
