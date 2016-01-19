@@ -15,7 +15,7 @@ else
 fi
 
 # Android SDK
-which_android=`sudo which android`
+which_android=`which android`
 if [ ! -z "$which_android" ]; then
   echo "Android SDK already installed"
 else
