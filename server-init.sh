@@ -51,7 +51,9 @@ else
   sudo apt-get install nodejs nodejs-legacy npm -y
 fi
 
-sudo git submodule init && git submodule update
+git submodule init
+git submodule update
 cd client
-sudo npm install
-sudo chown -R www-data:www-data /var/www
+npm install
+
+chown -R `whoami` .
