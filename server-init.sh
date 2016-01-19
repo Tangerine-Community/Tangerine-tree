@@ -1,8 +1,9 @@
 # tree
 
+# apt-get update
 if ! $updated_recently; then
   sudo apt-get update
-  updated_recently=TRUE
+  export updated_recently=TRUE
 fi
 
 # JDK
