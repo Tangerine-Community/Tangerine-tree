@@ -16,7 +16,7 @@ fi
 
 # Android SDK
 which_javac=`which android`
-if [ ! -z "$which_android" ]
+if [ ! -z "$which_android" ]; then
   echo "Android SDK already installed"
 else
   curl http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz > android-sdk.tgz
