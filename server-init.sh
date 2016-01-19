@@ -46,11 +46,12 @@ fi
 
 
 # node
-which_npm=`which npm`
-if [ ! -z "$which_npm" ]; then
-  echo "npm already installed"
+which_node=`which node`
+if [ ! -z "$which_node" ]; then
+  echo "node already installed"
 else
-  sudo apt-get install nodejs nodejs-legacy npm -y
+  curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+  sudo apt-get install -y nodejs
 fi
 
 
