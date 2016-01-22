@@ -66,4 +66,4 @@ dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $dir/client
 npm install
 
-chown -R `whoami` .
+sudo chown -R `whoami` ~
