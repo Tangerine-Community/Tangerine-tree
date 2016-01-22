@@ -36,12 +36,16 @@ else
   echo "  * Android SDK Platform Tools"
   echo "  * Android SDK Build Tools"
   echo "  * Android SDK Platform (whatever version you need)"
-  echo "For example: 1,2,6,26"
-  echo "Install the proper versions please. Example: 1,2,6,26"
+  echo "For example: 1,3,4,27"
+  echo "Install the proper versions please. Example: 1,3,4,27"
   echo -n "Package numbers separated by comma, no spaces:"
   read packages
   /usr/local/bin/android-sdk-linux/tools/android update sdk -u -a -t $packages
 
+  # required on 64-bit ubuntu
+  sudo dpkg --add-architecture i386
+  sudo apt-get -qqy update
+  sudo apt-get -qqy install libncurses5:i386 libstdc++6:i386 zlib1g:i386
 fi
 
 
