@@ -28,7 +28,7 @@ const notOk = function(output, res, status) {
   if (output === undefined) { return; }
   const badExit = output.code !== 0;
   if (badExit) {
-    logger.error(buildApk.output);
+    logger.error(output.output);
     res
       .status(status)
       .json({msg:output.output})
