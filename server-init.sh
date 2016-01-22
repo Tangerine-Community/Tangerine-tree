@@ -22,7 +22,6 @@ else
   curl http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz > android-sdk.tgz
   tar xvf android-sdk.tgz
   sudo mv android-sdk-linux /usr/local/bin
-  sudo chown -R root:root /usr/local/bin/android-sdk-linux/
   sudo chmod a+x /usr/local/bin/android-sdk-linux/tools/android
   export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools
   sudo sh -c "echo \"export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools\" > /etc/profile.d/android-sdk-path.sh"
