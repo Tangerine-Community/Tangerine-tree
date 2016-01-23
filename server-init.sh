@@ -20,8 +20,9 @@ if [ ! -z "$which_android" ]; then
   echo "Android SDK already installed"
 else
   curl http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz > tmp/android-sdk.tgz
-  tar xvf tmp/android-sdk.tgz
-  sudo mv tmp/android-sdk-linux /usr/local/bin
+  sudo mkdir /usr/local/bin/android-sdk-linux
+  sudo tar xvf tmp/android-sdk.tgz -C /usr/local/bin
+  sudo chown `whoami`:`whoami` /usr/local/bin/android-sdk-linux
   sudo chmod a+x /usr/local/bin/android-sdk-linux/tools/android
   export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools
   sudo sh -c "echo \"export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools\" > /etc/profile.d/android-sdk-path.sh"
