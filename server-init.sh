@@ -1,5 +1,7 @@
-#!/usr/bin/env bash -v
+#!/usr/bin/env bash
 # tree
+
+set -v # set verbose
 
 # apt-get update
 if ! $updated_recently; then
@@ -8,16 +10,14 @@ if ! $updated_recently; then
 fi
 
 # JDK
-which_javac=`which javac`
-if [ ! -z "$which_javac" ]; then
+if [ ! -z "`which javac`" ]; then
   echo "JDK already installed"
 else
   sudo apt-get install default-jdk -y
 fi
 
 # Android SDK
-which_android=`which android`
-if [ ! -z "$which_android" ]; then
+if [ ! -z "`which android`" ]; then
   echo "Android SDK already installed"
 else
   curl http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz > tmp/android-sdk.tgz
@@ -51,8 +51,7 @@ fi
 
 
 # node
-which_node=`which node`
-if [ ! -z "$which_node" ]; then
+if [ ! -z "`which node`" ]; then
   echo "node already installed"
 else
   curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
