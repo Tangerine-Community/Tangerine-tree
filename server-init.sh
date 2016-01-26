@@ -26,7 +26,7 @@ else
   sudo chown -R $USER:$USER /usr/local/bin/android-sdk-linux
   sudo chmod a+x /usr/local/bin/android-sdk-linux/tools/android
   export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools
-  sudo sh -c "echo \"export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools\" > /etc/profile.d/android-sdk-path.sh"
+  sudo sh -c "echo \"export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools \nexport ANDROID_HOME=/usr/local/bin/android-sdk-linux\" > /etc/profile.d/android-sdk-path.sh"
 
   # Install Android SDK's tools
   echo "y" | /usr/local/bin/android-sdk-linux/tools/android update sdk -u -a --force -t "android-22,tools,platform-tools,build-tools-23.0.2"
