@@ -29,19 +29,7 @@ else
   sudo sh -c "echo \"export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools\" > /etc/profile.d/android-sdk-path.sh"
 
   # Install Android SDK's tools
-  /usr/local/bin/android-sdk-linux/tools/android list sdk --all
-  echo "################ Android SDK Install ########################"
-  echo "Please select which following packages you wish to install."
-  echo "You want the numbers for the following"
-  echo "  * Android SDK Tools"
-  echo "  * Android SDK Platform Tools"
-  echo "  * Android SDK Build Tools"
-  echo "  * Android SDK Platform (whatever version you need)"
-  echo "For example: 1,3,4,27"
-  echo "Install the proper versions please. Example: 1,3,4,27"
-  echo -n "Package numbers separated by comma, no spaces:"
-  read packages
-  /usr/local/bin/android-sdk-linux/tools/android update sdk -u -a -t $packages
+  echo "y" | /usr/local/bin/android-sdk-linux/tools/android update sdk -u -a --force -t "android-22,tools,platform-tools,build-tools-23.0.2"
 
   # required on 64-bit ubuntu
   sudo dpkg --add-architecture i386
