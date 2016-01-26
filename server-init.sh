@@ -23,7 +23,7 @@ else
   curl http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz > tmp/android-sdk.tgz
   sudo mkdir /usr/local/bin/android-sdk-linux
   sudo tar xvf tmp/android-sdk.tgz -C /usr/local/bin
-  sudo chown `whoami`:`whoami` /usr/local/bin/android-sdk-linux
+  sudo chown -R $USER:$USER /usr/local/bin/android-sdk-linux
   sudo chmod a+x /usr/local/bin/android-sdk-linux/tools/android
   export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools
   sudo sh -c "echo \"export PATH=$PATH:/usr/local/bin/android-sdk-linux/tools:/usr/local/bin/android-sdk-linux/build-tools\" > /etc/profile.d/android-sdk-path.sh"
@@ -66,4 +66,4 @@ dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $dir/client
 npm install
 
-sudo chown -R `whoami` ~
+sudo chown -R $USER ~
